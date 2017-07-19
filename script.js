@@ -12,8 +12,8 @@ var pc = {
 
 // define our emojis
 var emojis = ['💯','💦','🙏🏽','😪','😤','🚮'];
-
-// define
+var joker = '💯';
+// define state
 var currentRound = 0;
 
 var startNextRound = function () {
@@ -31,4 +31,41 @@ var getRandomEmoji = function () {
 	return randomEmoji;
 }
 
-console.log(emojis)
+var snap = function (pcCalledSnap) {
+	// compare between the 2 emojis
+	// if its a joker then snap is true 
+	// if snap is true then the user/pc gets +1 to roundsWon
+	// notify of what just happened - console/ui 
+
+	var snap = pc.currentEmoji == user.currentEmoji; 
+if (pc.currentEmoji == joker || user.currentEmoji == joker) {
+	snap = true;
+}
+
+console.group('Snap Called by: ' + (pcCalledSnap ? 'PC' : 'User'));
+
+
+// pc called
+if (pcCalledSnap) {
+	if (snap) {
+		pc.roundsWon ++;
+		console.log('pc won')
+	} else {
+		user.roundsWon ++;
+		console.log('pc lost')
+	}
+
+// user called
+} else {
+	if (snap) {
+		user.roundsWon 
+		console.log('user won')
+		} else {
+		pc.roundsWon ++;
+		console.log('user lost')
+	}
+}
+
+
+	console.groupEnd();
+};
