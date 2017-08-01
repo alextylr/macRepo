@@ -125,6 +125,19 @@ button:hover, button:active{
 	background-color: #f64c4c;
 	box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
+
+.instructions{
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+	background-color: rgba(0,0,0,.95);
+	color: #ffffff;
+	text-align: center;
+	transition: opacity 500ms;
+}
+.instructions.hide{
+	opacity: 0;
+}
 /*<html>
 <!-- abs positioned element -->
 <div class="current round">
